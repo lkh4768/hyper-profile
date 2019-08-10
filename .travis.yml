@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "10"
+addons:
+  sonarcloud:
+    organization: "lkh4768-github"
+    token:
+      secure: "PKfwmsVmxGObW9FJdaY95IOlyi9iEYsGrDIjIo5jtmdk6hWQ4bg1iPXAnc/fev58GtlNHm5Iz+K3ucB81lUsmjl0O3Na7RtD04cx2EWUo5vt+Q/uwzQqGMMz7cHYqAi0G8XDwq5yffgjAix80oMd/dpWOVTlus73sC719qlYEYFOe8X/NvX9jo6Og8vkSk7EZfZgeJnLR0cyRuJyizvt0uQ9UdppRLrjSeeUf3Af1SNGqvdKrcKkdX4dRYRTZRvx/2LGvXZ+UsbRuZEMmJ5I3/TXC0oiBQZOrPNI5Z+VR6IdJKmavj1pw4OOLsU6T6vYgeHhiUBNuVvsBDLCX9P3it1zPmnlAI613W70jLjgvo4ce0H4ejkM2oAPSYp5Z58YFfQ5quM1G7loa+vAg4Bx1bugNmcFmwyd6uFbQk4zA9QEtmDnYZ9o5W4GhlibON8NnmuvMSOQo5cWL5gJq33PQx0kDKemf3ml12BUTkNPQD2npNu5kMuPYdmvp+s0fkT1x8Y7FiTi4GFT/gNsbhuAKn+xSlzJ9AFKstpTSX5Kb8hacRuTxL1UYDcVHsmj7DaQNthbzI4+mKaC0cbbIXUGDYuudA0kL3eDmZMbKp8Hgg2Z7wWnnpgVCWUFAeGA+5ygT6C0ECVAvoaKAqEPnNNL+ZOg7mpCbB5cuxMGP3i65RQ="
+script:
+  - npm run lint:report
+  - npm run test:report
+  - sonar-scanner
