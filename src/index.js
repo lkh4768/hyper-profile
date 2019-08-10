@@ -1,3 +1,1 @@
-exports.onApp = app => {
-  createWindow = app.createWindow;
-};
+exports.onApp = () => {};
