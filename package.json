@@ -5,15 +5,15 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint src",
-    "lint:report": "npm run lint -- -f json -o ./reports/lint/report.json"
+    "lint:report": "npm run lint -- -f json -o ./reports/lint/report.json",
+    "test": "NODE_ENV=test jest",
+    "test:report": "NODE_ENV=test npm run test -- --coverage"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lkh4768/hyper-profile.git"
   },
-  "keywords": [
-    "hyper-plugin"
-  ],
+  "keywords": ["hyper-plugin"],
   "author": "kihyeon lee",
   "license": "MIT",
   "bugs": {
@@ -21,6 +21,18 @@
   },
   "homepage": "https://github.com/lkh4768/hyper-profile#readme",
   "dependencies": {
-    "eslint": "^6.1.0"
+    "eslint": "^6.1.0",
+    "jest": "^24.8.0",
+    "jest-sonar-reporter": "^2.0.0"
+  },
+  "jest": {
+    "testResultsProcessor": "jest-sonar-reporter",
+    "coverageReporters": ["lcov"],
+    "coverageDirectory": "reports/unittest/coverage"
+  },
+  "jestSonar": {
+    "reportPath": "reports/unittest",
+    "reportFile": "report.xml",
+    "indent": 4
   }
 }
