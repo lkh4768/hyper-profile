@@ -1,0 +1,26 @@
+{
+  "name": "hyper-profile",
+  "version": "0.0.1",
+  "description": "Profile for hyper",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint src",
+    "lint:report": "npm run lint -- -f json -o ./reports/lint/report.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lkh4768/hyper-profile.git"
+  },
+  "keywords": [
+    "hyper-plugin"
+  ],
+  "author": "kihyeon lee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lkh4768/hyper-profile/issues"
+  },
+  "homepage": "https://github.com/lkh4768/hyper-profile#readme",
+  "dependencies": {
+    "eslint": "^6.1.0"
+  }
+}
