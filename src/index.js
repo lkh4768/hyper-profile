@@ -1,3 +1,5 @@
+const {dialog} = require('electron');
+
 exports.decorateMenu = menu =>
   menu.map(item => {
     if (item.label !== 'Plugins') return item;
@@ -8,7 +10,16 @@ exports.decorateMenu = menu =>
       label: 'Profile',
       accelerator: 'Alt+C',
       click: () => {
-        console.log('Clicked profile menu');
+        dialog.showMessageBox(
+          {
+            type: 'none',
+            buttons: ['read', 'write'],
+            title: 'read config',
+          },
+          arg => {
+            console.log({arg});
+          },
+        );
       },
     });
     return newItem;
